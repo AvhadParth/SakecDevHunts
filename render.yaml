@@ -1,0 +1,11 @@
+services:
+  - type: static
+    name: sakecdevhunts-frontend
+    env: static
+    branch: main
+    buildCommand: "npm install --prefix frontend --legacy-peer-deps && npm run build --prefix frontend"
+    publishPath: "frontend/dist"
+    envVars:
+      - key: VITE_API_URL
+        value: "https://sakecdevhunts-server.onrender.com/api"
+        sync: false
